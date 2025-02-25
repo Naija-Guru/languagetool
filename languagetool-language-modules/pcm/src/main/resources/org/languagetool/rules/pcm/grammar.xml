@@ -45,7 +45,7 @@ USA
         </rule>
     </category>
 
-    <category id="ORTHOGRAPHIC_ERRORS" name="Orthographic Errors">
+    <category id="SPELLING_ERRORS" name="Spelling Errors">
         <rulegroup id="DETERMINERS_MISSPELLING" name="Check sey spelling of determiners dey correct">
             <rule>
                 <pattern>
@@ -149,8 +149,8 @@ USA
                 <pattern>
                     <token>those</token>
                 </pattern>
-                <message>Spelling of English demonstrative pronoun "that" for Naija na <suggestion>dat</suggestion>.</message>
-                <example correction="Dose">E no go better for <marker>those</marker> people.</example>
+                <message>Spelling of English demonstrative pronoun "those" for Naija na <suggestion>dose</suggestion>.</message>
+                <example correction="dose">E no go better for <marker>those</marker> people.</example>
             </rule>
         </rulegroup>
 
@@ -381,6 +381,49 @@ USA
                 <example correction="becos">E no go come <marker>because</marker> im dey sick.</example>
             </rule>
         </rulegroup>
+
+        <rulegroup id="ADJECTIVES_MISSPELLING" name="Check sey spelling of adjectives dey correct">
+            <rule>
+                <pattern>
+                    <token>plenti</token>
+                </pattern>
+                <message>Di correct spelling of dis adjective na <suggestion>plenty</suggestion>.</message>
+                <example correction="plenty">I get <marker>plenti</marker> wahala.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="VERBS_MISSPELLING" name="Check sey spelling of verbs dey correct">
+            <rule>
+                <pattern>
+                    <token>wan</token>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>want</suggestion>.</message>
+                <example correction="want">She <marker>wan</marker> chop all my money.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="NOUNS_MISSPELLING" name="Check sey spelling of adjectives dey correct">
+            <rule>
+                <pattern>
+                    <token>moni</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>money</suggestion>.</message>
+                <example correction="Money"><marker>Moni</marker> no be problem.</example>
+            </rule>
+        </rulegroup>
+    </category>
+
+    <category id="PUNCTUATION_ERRORS" name="Punctuation Errors">
+        <rule id="DEM_SUFFIX" name="Check sey hyphen dey between noun and di pluralization marker &quot;dem&quot;">
+            <pattern>
+                <token postag_regexp="yes" postag="NN|NNS|NN:U|NN:UN" />
+                <token>dem</token>
+            </pattern>
+            <message>Hyphenate di noun "<match no="1" />" wit di plural marker "dem".</message>
+            <suggestion><match no="1" />-<match no="2" /></suggestion>
+            <example correction="man-dem">I dey wit my <marker>man dem</marker>.</example>
+            <example correction="cars-dem">Hu get dese <marker>cars dem</marker>?</example>
+        </rule>
     </category>
 
     <category id="GRAMMAR" name="Grammar">

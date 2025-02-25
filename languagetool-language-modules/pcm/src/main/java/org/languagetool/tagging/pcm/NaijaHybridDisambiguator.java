@@ -35,8 +35,8 @@ import java.io.IOException;
  */
 public class NaijaHybridDisambiguator extends AbstractDisambiguator {
 
-  private final MultiWordChunker chunker = new MultiWordChunker("/pcm/multiwords.txt", true, true, false);
-  private final MultiWordChunker chunkerGlobal = new MultiWordChunker("/spelling_global.txt", true, true, false, MultiWordChunker.tagForNotAddingTags);
+  private final MultiWordChunker chunker = MultiWordChunker.getInstance("/pcm/multiwords.txt", true, true, false);
+  private final MultiWordChunker chunkerGlobal = MultiWordChunker.getInstance("/spelling_global.txt", true, true, false, MultiWordChunker.tagForNotAddingTags);
   private final Disambiguator disambiguator;
 
   public NaijaHybridDisambiguator(Language lang) {
