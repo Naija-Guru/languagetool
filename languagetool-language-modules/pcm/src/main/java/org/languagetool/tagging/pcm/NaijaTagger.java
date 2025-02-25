@@ -60,8 +60,7 @@ public class NaijaTagger extends BaseTagger {
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(
-    "taya",
-    "plenti"
+    "taya"
   );
 
   public static final NaijaTagger INSTANCE = new NaijaTagger();

@@ -33,10 +33,9 @@ import org.languagetool.tokenizers.Tokenizer;
 import org.languagetool.tokenizers.pcm.NaijaWordTokenizer;
 import org.languagetool.tools.Tools;
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
-public class Naija extends Language implements AutoCloseable {
+public class Naija extends LanguageWithModel {
   private LanguageModel languageModel;
 
   @NotNull
