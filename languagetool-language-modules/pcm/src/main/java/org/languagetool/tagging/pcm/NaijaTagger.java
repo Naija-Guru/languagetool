@@ -43,24 +43,21 @@ public class NaijaTagger extends BaseTagger {
 
   private static final Set<String> VERBS = ImmutableSet.of(
     "baff",
-    "breet",
-    "hol",
-    "laff",
     "nak",
     "sabi",
-    "tink",
-    "wan"
+    "don"
   );
 
   private static final Set<String> NOUNS = ImmutableSet.of(
-    "tiff",
-    "olopka",
-    "tori",
-    "moni"
+    "aboki",
+    "agbada",
+    "olokpa"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(
-    "taya"
+    "ogbonge",
+    "taya",
+    "wowo"
   );
 
   public static final NaijaTagger INSTANCE = new NaijaTagger();

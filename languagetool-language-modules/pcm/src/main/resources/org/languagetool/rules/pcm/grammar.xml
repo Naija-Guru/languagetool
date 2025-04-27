@@ -400,6 +400,35 @@ USA
                 <message>Di correct spelling of dis verb na <suggestion>want</suggestion>.</message>
                 <example correction="want">She <marker>wan</marker> chop all my money.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token postag_regexp="yes" postag="NN|NNS|NNP|NNPS|VB|PRP" />
+                    <marker>
+                        <token regexp="yes">tiff|tiif|thief</token>
+                    </marker>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>thieve</suggestion>.</message>
+                <example correction="thieve">Dem don <marker>tiff</marker> dat my fine watch o.</example>
+                <example correction="thieve">Politicians <marker>tiif</marker> di whole budget.</example>
+                <example correction="thieve">Wetin she <marker>thief</marker>?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>laff</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>laugh</suggestion>.</message>
+                <example correction="laugh">I don <marker>laff</marker> taya.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>breet</token>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>breathe</suggestion>.</message>
+                <example correction="breathe">Hu dey <marker>breet</marker>?</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="NOUNS_MISSPELLING" name="Check sey spelling of adjectives dey correct">
@@ -409,6 +438,24 @@ USA
                 </pattern>
                 <message>Di correct spelling of dis noun na <suggestion>money</suggestion>.</message>
                 <example correction="Money"><marker>Moni</marker> no be problem.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">olopka|olopa</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>olokpa</suggestion>.</message>
+                <example correction="olokpa">I late becos <marker>olopa</marker> stop me for road.</example>
+                <example correction="olokpa">I dey fear <marker>olopka</marker> pass armed robber!</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">tori|stori</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>story</suggestion>.</message>
+                <example correction="story">E get one <marker>tori</marker> wey I want tell yu.</example>
+                <example correction="story">Oya na, yarn me di <marker>stori</marker>.</example>
             </rule>
         </rulegroup>
     </category>
@@ -438,5 +485,22 @@ USA
             <example correction="">I wan buy <marker>a</marker> book.</example>
             <example correction="">I don chop <marker>an</marker> apple.</example>
         </rule>
+
+        <rulegroup id="VERB_TENSES" name="Check sey verb tenses dey correct">
+            <rule>
+                <pattern>
+                    <token postag_regexp="yes" postag="NN|NNS|NNP|NNPS|PRP" />
+                    <marker>
+                        <token postag="VBD" />
+                    </marker>
+                </pattern>
+                <message>Di verb tense no correct. Use Naija simple past instead of English simple past.</message>
+                <url>https://naija.guru/pcm/grammar/tenses-and-conjugation/</url>
+                <example>I help my neighbor last week.</example>
+                <example type="incorrect">I <marker>helped</marker> my neighbor last week.</example>
+                <example>Alexander di great die for Babylon.</example>
+                <example type="incorrect">Alexander di great <marker>died</marker> for Babylon.</example>
+            </rule>
+        </rulegroup>
     </category>
 </rules>
