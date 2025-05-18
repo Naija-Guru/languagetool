@@ -257,9 +257,73 @@ USA
         <rulegroup id="INDEFINITE_PRONOUNS_MISSPELLING" name="Check sey spelling of indefinite pronouns dey correct">
             <rule>
                 <pattern>
+                    <token>anybodi</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>anybody</suggestion>.</message>
+                <example correction="anybody">I no see <marker>anybodi</marker> for house.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>anytin</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>anything</suggestion>.</message>
+                <example correction="anything">I no sabi <marker>anytin</marker> about am.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>everybodi</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>everybody</suggestion>.</message>
+                <example correction="Everybody"><marker>Everybodi</marker> don waka go.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>everytin</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>everything</suggestion>.</message>
+                <example correction="everything">I don pack <marker>everytin</marker> for bag.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>nobodi</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>nobody</suggestion>.</message>
+                <example correction="Nobody"><marker>Nobodi</marker> dey house.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>notin</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>nothing</suggestion>.</message>
+                <example correction="nothing">I no see <marker>notin</marker> for road.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>somebodi</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>somebody</suggestion>.</message>
+                <example correction="Somebody"><marker>Somebodi</marker> knock for gate.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>sometin</token>
+                </pattern>
+                <message>Di correct spelling of dis pronoun na <suggestion>something</suggestion>.</message>
+                <example correction="something">I hear <marker>sometin</marker> for backyard.</example>
+            </rule>
+
+            <rule>
+                <pattern>
                     <token>somewhere</token>
                 </pattern>
-                <message>Spelling of English indefinite pronoun "somewhere" for Naija na <suggestion>somewer</suggestion>.</message>
+                <message>Di correct spelling of dis pronoun na <suggestion>somewer</suggestion>.</message>
                 <example correction="somewer">I dey go <marker>somewhere</marker>.</example>
             </rule>
 
@@ -267,7 +331,7 @@ USA
                 <pattern>
                     <token>everywhere</token>
                 </pattern>
-                <message>Spelling of English indefinite pronoun "everywhere" for Naija na <suggestion>everywer</suggestion>.</message>
+                <message>Di correct spelling of dis pronoun na <suggestion>everywer</suggestion>.</message>
                 <example correction="Everywer"><marker>Everywhere</marker> hot for dis country.</example>
             </rule>
 
@@ -275,7 +339,7 @@ USA
                 <pattern>
                     <token>nowhere</token>
                 </pattern>
-                <message>Spelling of English indefinite pronoun "nowhere" for Naija na <suggestion>nower</suggestion>.</message>
+                <message>Di correct spelling of dis pronoun na <suggestion>nower</suggestion>.</message>
                 <example correction="Nower"><marker>Nowhere</marker> safe for dis country o.</example>
             </rule>
         </rulegroup>
@@ -357,10 +421,19 @@ USA
 
             <rule>
                 <pattern>
-                    <token>through</token>
+                    <token>without</token>
                 </pattern>
-                <message>Spelling of English preposition "through" for Naija na <suggestion>tru</suggestion>.</message>
-                <example correction="tru">Yu no sabi wetin I dey go <marker>through</marker>.</example>
+                <message>Spelling of English preposition "without" for Naija na <suggestion>witout</suggestion>.</message>
+                <example correction="witout">I no fit do am <marker>without</marker> you.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">through|tru</token>
+                </pattern>
+                <message>Spelling of English preposition "through" for Naija na <suggestion>thru</suggestion>.</message>
+                <example correction="thru">Yu no sabi wetin I dey go <marker>through</marker>.</example>
+                <example correction="thru">Yu no sabi wetin I dey go <marker>tru</marker>.</example>
             </rule>
         </rulegroup>
 
@@ -429,9 +502,25 @@ USA
                 <message>Di correct spelling of dis verb na <suggestion>breathe</suggestion>.</message>
                 <example correction="breathe">Hu dey <marker>breet</marker>?</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>tok</token>
+                </pattern>
+                <message>Spelling of English verb "talk" for Naija na <suggestion>talk</suggestion>.</message>
+                <example correction="talk">Make we <marker>tok</marker> later.</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="NOUNS_MISSPELLING" name="Check sey spelling of adjectives dey correct">
+            <rule>
+                <pattern>
+                    <token>bodi</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>body</suggestion>.</message>
+                <example correction="body">My <marker>bodi</marker> dey pain me.</example>
+            </rule>
+
             <rule>
                 <pattern>
                     <token>moni</token>
@@ -456,6 +545,25 @@ USA
                 <message>Di correct spelling of dis noun na <suggestion>story</suggestion>.</message>
                 <example correction="story">E get one <marker>tori</marker> wey I want tell yu.</example>
                 <example correction="story">Oya na, yarn me di <marker>stori</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">pesin|person</token>
+                </pattern>
+                <message>Make yu use di noun <suggestion>persin</suggestion>.</message>
+                <example correction="persin">Na one <marker>pesin</marker> tell me.</example>
+                <example correction="persin">Who be dat <marker>person</marker>?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">pesins|persons|persins</token>
+                </pattern>
+                <message>Make yu use di noun <suggestion>people</suggestion>.</message>
+                <example correction="people">Na good <marker>pesins</marker> dem be.</example>
+                <example correction="people">Many <marker>persons</marker> waka pass here.</example>
+                <example correction="people">All those <marker>persins</marker> no sabi road.</example>
             </rule>
         </rulegroup>
     </category>
