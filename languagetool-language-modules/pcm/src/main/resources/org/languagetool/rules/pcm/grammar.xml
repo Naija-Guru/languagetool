@@ -300,7 +300,7 @@ USA
                     <token>notin</token>
                 </pattern>
                 <message>Di correct spelling of dis pronoun na <suggestion>nothing</suggestion>.</message>
-                <example correction="nothing">I no see <marker>notin</marker> for road.</example>
+                <example correction="Nothing"><marker>Notin</marker> dey happen.</example>
             </rule>
 
             <rule>
@@ -507,7 +507,7 @@ USA
                 <pattern>
                     <token>tok</token>
                 </pattern>
-                <message>Spelling of English verb "talk" for Naija na <suggestion>talk</suggestion>.</message>
+                <message>Di correct spelling of dis verb na <suggestion>talk</suggestion>.</message>
                 <example correction="talk">Make we <marker>tok</marker> later.</example>
             </rule>
         </rulegroup>
@@ -553,7 +553,7 @@ USA
                 </pattern>
                 <message>Make yu use di noun <suggestion>persin</suggestion>.</message>
                 <example correction="persin">Na one <marker>pesin</marker> tell me.</example>
-                <example correction="persin">Who be dat <marker>person</marker>?</example>
+                <example correction="persin">Hu be dat <marker>person</marker>?</example>
             </rule>
 
             <rule>
@@ -562,8 +562,8 @@ USA
                 </pattern>
                 <message>Make yu use di noun <suggestion>people</suggestion>.</message>
                 <example correction="people">Na good <marker>pesins</marker> dem be.</example>
-                <example correction="people">Many <marker>persons</marker> waka pass here.</example>
-                <example correction="people">All those <marker>persins</marker> no sabi road.</example>
+                <example correction="people">Many <marker>persons</marker> waka pass yer.</example>
+                <example correction="people">All dose <marker>persins</marker> no sabi road.</example>
             </rule>
         </rulegroup>
     </category>
@@ -593,22 +593,5 @@ USA
             <example correction="">I wan buy <marker>a</marker> book.</example>
             <example correction="">I don chop <marker>an</marker> apple.</example>
         </rule>
-
-        <rulegroup id="VERB_TENSES" name="Check sey verb tenses dey correct">
-            <rule>
-                <pattern>
-                    <token postag_regexp="yes" postag="NN|NNS|NNP|NNPS|PRP" />
-                    <marker>
-                        <token postag="VBD" />
-                    </marker>
-                </pattern>
-                <message>Di verb tense no correct. Use Naija simple past instead of English simple past.</message>
-                <url>https://naija.guru/pcm/grammar/tenses-and-conjugation/</url>
-                <example>I help my neighbor last week.</example>
-                <example type="incorrect">I <marker>helped</marker> my neighbor last week.</example>
-                <example>Alexander di great die for Babylon.</example>
-                <example type="incorrect">Alexander di great <marker>died</marker> for Babylon.</example>
-            </rule>
-        </rulegroup>
     </category>
 </rules>
