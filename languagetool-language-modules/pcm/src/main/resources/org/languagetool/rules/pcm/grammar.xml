@@ -568,19 +568,6 @@ USA
         </rulegroup>
     </category>
 
-    <category id="PUNCTUATION_ERRORS" name="Punctuation Errors">
-        <rule id="DEM_SUFFIX" name="Check sey hyphen dey between noun and di pluralization marker &quot;dem&quot;">
-            <pattern>
-                <token postag_regexp="yes" postag="NN|NNS|NN:U|NN:UN" />
-                <token>dem</token>
-            </pattern>
-            <message>Hyphenate di noun "<match no="1" />" wit di plural marker "dem".</message>
-            <suggestion><match no="1" />-<match no="2" /></suggestion>
-            <example correction="man-dem">I dey wit my <marker>man dem</marker>.</example>
-            <example correction="cars-dem">Hu get dese <marker>cars dem</marker>?</example>
-        </rule>
-    </category>
-
     <category id="GRAMMAR" name="Grammar">
         <rule id="NO_INDEFINITE_ARTICLES" name="Check sey text no get English indefinite articles for inside">
             <pattern>
