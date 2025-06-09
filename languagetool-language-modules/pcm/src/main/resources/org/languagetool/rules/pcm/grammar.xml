@@ -558,7 +558,7 @@ USA
 
             <rule>
                 <pattern>
-                    <token regexp="yes">pesins|persons|persins</token>
+                    <token regexp="yes">pesins|persons|persins|pipu|pipo</token>
                 </pattern>
                 <message>Make yu use di noun <suggestion>people</suggestion>.</message>
                 <example correction="people">Na good <marker>pesins</marker> dem be.</example>
