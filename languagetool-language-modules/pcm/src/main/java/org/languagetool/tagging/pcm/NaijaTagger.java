@@ -45,13 +45,16 @@ public class NaijaTagger extends BaseTagger {
     "baff",
     "nak",
     "sabi",
-    "don"
+    "don",
+    "komot",
+    "chuk"
   );
 
   private static final Set<String> NOUNS = ImmutableSet.of(
     "aboki",
     "agbada",
-    "olokpa"
+    "olokpa",
+    "nyash"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(

@@ -510,6 +510,22 @@ USA
                 <message>Di correct spelling of dis verb na <suggestion>talk</suggestion>.</message>
                 <example correction="talk">Make we <marker>tok</marker> later.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>comot</token>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>komot</suggestion>.</message>
+                <example correction="komot">She neva <marker>comot</marker> house.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>chook</token>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>chuk</suggestion>.</message>
+                <example correction="chuk">No <marker>chook</marker> mouth for my matter.</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="NOUNS_MISSPELLING" name="Check sey spelling of adjectives dey correct">
@@ -564,6 +580,32 @@ USA
                 <example correction="people">Na good <marker>pesins</marker> dem be.</example>
                 <example correction="people">Many <marker>persons</marker> waka pass yer.</example>
                 <example correction="people">All dose <marker>persins</marker> no sabi road.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>tin</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>thing</suggestion>.</message>
+                <example correction="thing">Di <marker>tin</marker> enter my body.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>tins</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>things</suggestion>.</message>
+                <example correction="things">Di <marker>tins</marker> wey I don see no be small.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">ynash|nyansh</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>nyash</suggestion>.</message>
+                <example correction="nyash">Wai yu dey look my <marker>ynash</marker> like dat?</example>
+                <example correction="nyash">Una get big <marker>nyansh</marker> o.</example>
+                <example correction="Nyash"><marker>Ynash</marker> na my mumu button.</example>
             </rule>
         </rulegroup>
     </category>
