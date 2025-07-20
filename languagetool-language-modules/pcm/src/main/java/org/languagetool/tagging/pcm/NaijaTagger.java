@@ -40,6 +40,7 @@ public class NaijaTagger extends BaseTagger {
   private static final String VERB_BASE_FORM_TAG = "VB";
   private static final String NOUN_SINGULAR_COUNT_TAG = "NN";
   private static final String ADJECTIVE_TAG = "JJ";
+  private static final String PRONOUN_PERSONAL_TAG = "PRP";
 
   private static final Set<String> VERBS = ImmutableSet.of(
     "baff",
@@ -54,13 +55,19 @@ public class NaijaTagger extends BaseTagger {
     "aboki",
     "agbada",
     "olokpa",
-    "nyash"
+    "nyash",
+    "domot"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(
     "ogbonge",
     "taya",
     "wowo"
+  );
+
+  private static final Set<String> PRONOUNS = ImmutableSet.of(
+    "e",
+    "mysef"
   );
 
   public static final NaijaTagger INSTANCE = new NaijaTagger();
@@ -133,6 +140,9 @@ public class NaijaTagger extends BaseTagger {
       }
       if (ADJECTIVES.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, ADJECTIVE_TAG, lowerWord));
+      }
+      if (PRONOUNS.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, PRONOUN_PERSONAL_TAG, lowerWord));
       }
 
       if (l.isEmpty()) {

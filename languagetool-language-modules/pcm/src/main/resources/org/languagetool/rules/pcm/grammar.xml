@@ -453,6 +453,14 @@ USA
                 <message>Spelling of English conjunction "because" for Naija na <suggestion>becos</suggestion>.</message>
                 <example correction="becos">E no go come <marker>because</marker> im dey sick.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>bifor</token>
+                </pattern>
+                <message>Di correct spelling of dis word na <suggestion>before</suggestion>.</message>
+                <example correction="before">Make I no chuk mouth <marker>bifor</marker> I go collect slap.</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="ADJECTIVES_MISSPELLING" name="Check sey spelling of adjectives dey correct">
@@ -513,10 +521,11 @@ USA
 
             <rule>
                 <pattern>
-                    <token>comot</token>
+                    <token regexp="yes">comot|commot</token>
                 </pattern>
                 <message>Di correct spelling of dis verb na <suggestion>komot</suggestion>.</message>
                 <example correction="komot">She neva <marker>comot</marker> house.</example>
+                <example correction="komot">I go soon <marker>commot</marker>.</example>
             </rule>
 
             <rule>
@@ -607,11 +616,35 @@ USA
                 <example correction="nyash">Una get big <marker>nyansh</marker> o.</example>
                 <example correction="Nyash"><marker>Ynash</marker> na my mumu button.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">blokus|blokkus|blocos|brokkus</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>blokos</suggestion>.</message>
+                <example correction="blokos">Wai yu dey look my <marker>blokus</marker> like dat?</example>
+                <example correction="blokos">Wai yu dey look my <marker>blokkus</marker> like dat?</example>
+                <example correction="blokos">Wai yu dey look my <marker>blocos</marker> like dat?</example>
+                <example correction="blokos">Wai yu dey look my <marker>brokkus</marker> like dat?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>dommot</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>domot</suggestion>.</message>
+                <example correction="domot">We dey go awa <marker>dommot</marker>.</example>
+            </rule>
         </rulegroup>
     </category>
 
     <category id="GRAMMAR" name="Grammar">
         <rule id="NO_INDEFINITE_ARTICLES" name="Check sey text no get English indefinite articles for inside">
+            <antipattern>
+                <token>a</token>
+                <token>regular</token>
+            </antipattern>
+
             <pattern>
                <marker>
                    <token regexp="yes">a|an</token>
@@ -621,6 +654,7 @@ USA
             <message>Naija no get indefinite article.</message>
             <example correction="">I wan buy <marker>a</marker> book.</example>
             <example correction="">I don chop <marker>an</marker> apple.</example>
+            <example type="correct">I dey chop beans on a regular.</example>
         </rule>
     </category>
 </rules>
