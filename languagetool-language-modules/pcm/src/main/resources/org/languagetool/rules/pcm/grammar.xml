@@ -703,14 +703,23 @@ USA
         </rule>
 
         <rule id="SUBJUNCTIVE_MARKER_MISSPELLING" name="Check sey spelling of subjunctive marker dey correct">
+            <antipattern>
+                <token postag_regexp="yes" postag="VB"/>
+                <token>make</token>
+                <token postag_regexp="yes" postag="PRP|NN|NNS"/>
+            </antipattern>
+
             <pattern>
                 <marker>
                     <token regexp="yes">make|meik</token>
                 </marker>
-                <token postag_regexp="yes" postag="PRP" />
+                <token postag_regexp="yes" postag="PRP|NN|NNS"/>
             </pattern>
             <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
             <example correction="mek">E dey important sey <marker>make</marker> yu sabi wetin contract talk before yu sign am.</example>
+            <example correction="Mek"><marker>Make</marker> persin no touch my food o.</example>
+            <example type="correct">Dem want mek una komot.</example>
+            <example type="correct">Yu go make persin cry</example>
         </rule>
     </category>
 </rules>
