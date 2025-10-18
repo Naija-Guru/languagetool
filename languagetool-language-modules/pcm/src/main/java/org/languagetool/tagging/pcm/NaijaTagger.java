@@ -56,18 +56,21 @@ public class NaijaTagger extends BaseTagger {
     "agbada",
     "olokpa",
     "nyash",
-    "domot"
+    "domot",
+    "sakpa"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(
     "ogbonge",
-    "taya",
-    "wowo"
+    "wowo",
+    "boku",
+    "brekete"
   );
 
   private static final Set<String> PRONOUNS = ImmutableSet.of(
     "e",
-    "mysef"
+    "mysef",
+    "yu"
   );
 
   public static final NaijaTagger INSTANCE = new NaijaTagger();

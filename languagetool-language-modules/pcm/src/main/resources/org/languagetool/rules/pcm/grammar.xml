@@ -27,12 +27,6 @@ USA
 <rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="pcm" xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.xsd">
     <category id="COMMONLY_CONFUSED_WORDS" name="Words wey dey confuse people">
         <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; dey correct">
-            <antipattern>
-                <token postag_regexp="yes" postag="SENT_START|VB"/>
-                <token>like</token>
-                <token>say</token>
-            </antipattern>
-
             <pattern>
                 <token postag_regexp="yes" postag="VB|JJ" />
                 <marker>
@@ -57,7 +51,7 @@ USA
 
             <rule>
                 <pattern>
-                    <token>your</token>
+                    <token regexp="yes">your|yur|ur</token>
                 </pattern>
                 <message>Spelling of English possessive "your" for Naija na <suggestion>yor</suggestion>.</message>
                 <example correction="Yor"><marker>Your</marker> head no correct.</example>
@@ -395,45 +389,64 @@ USA
 
             <rule>
                 <pattern>
-                    <token>enough</token>
+                    <token>enuf</token>
                 </pattern>
-                <message>Spelling of English adverb "enough" for Naija na <suggestion>enuf</suggestion>.</message>
-                <example correction="enuf">I no get <marker>enough</marker> moni for my trip.</example>
+                <message>Di correct spelling of dis adverb na <suggestion>enough</suggestion>.</message>
+                <example correction="enough">I no get <marker>enuf</marker> money for my trip.</example>
             </rule>
 
             <rule>
                 <pattern>
-                    <token>here</token>
+                    <token>yer</token>
                 </pattern>
-                <message>Spelling of English quantifier "here" for Naija na <suggestion>yer</suggestion>.</message>
-                <example correction="yer">Wetin una dey do for <marker>here</marker>?</example>
+                <message>Di correct spelling of dis adverb na <suggestion>here</suggestion>.</message>
+                <example correction="here">Wetin una dey do for <marker>yer</marker>?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token regexp="yes">con|com|kor</token>
+                    </marker>
+                    <token postag_regexp="yes" postag="VB" />
+                </pattern>
+                <message>Di correct spelling of dis adverb na <suggestion>kon</suggestion>.</message>
+                <example correction="kon">If I settle di man now, e no go <marker>con</marker> finish my work.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>togeda</token>
+                </pattern>
+                <message>Di correct spelling of dis adverb na <suggestion>together</suggestion>.</message>
+                <example correction="together">We begin trek <marker>togeda</marker></example>
             </rule>
         </rulegroup>
 
         <rulegroup id="PREPOSITIONS_MISSPELLING" name="Check sey spelling of prepositions dey correct">
             <rule>
                 <pattern>
-                    <token>with</token>
+                    <token>wit</token>
                 </pattern>
-                <message>Spelling of English preposition "with" for Naija na <suggestion>wit</suggestion>.</message>
-                <example correction="wit">Dem wan chop rice <marker>with</marker> stew.</example>
+                <message>Di correct spelling of dis preposition na <suggestion>with</suggestion>.</message>
+                <example correction="with">Dem want chop rice <marker>wit</marker> stew.</example>
             </rule>
 
             <rule>
                 <pattern>
-                    <token>without</token>
+                    <token>witout</token>
                 </pattern>
-                <message>Spelling of English preposition "without" for Naija na <suggestion>witout</suggestion>.</message>
-                <example correction="witout">I no fit do am <marker>without</marker> you.</example>
+                <message>Di correct spelling of dis preposition na <suggestion>without</suggestion>.</message>
+                <example correction="without">I no fit do am <marker>witout</marker> yu.</example>
             </rule>
 
             <rule>
                 <pattern>
-                    <token regexp="yes">through|tru</token>
+                    <token regexp="yes">thru|tru</token>
                 </pattern>
-                <message>Spelling of English preposition "through" for Naija na <suggestion>thru</suggestion>.</message>
-                <example correction="thru">Yu no sabi wetin I dey go <marker>through</marker>.</example>
-                <example correction="thru">Yu no sabi wetin I dey go <marker>tru</marker>.</example>
+                <message>Di correct spelling of dis preposition na <suggestion>through</suggestion>.</message>
+                <example correction="through">Yu no sabi wetin I dey go <marker>thru</marker>.</example>
+                <example correction="through">Yu no sabi wetin I dey go <marker>tru</marker>.</example>
             </rule>
         </rulegroup>
 
@@ -500,7 +513,7 @@ USA
                     <token>laff</token>
                 </pattern>
                 <message>Di correct spelling of dis noun na <suggestion>laugh</suggestion>.</message>
-                <example correction="laugh">I don <marker>laff</marker> taya.</example>
+                <example correction="laugh">I don <marker>laff</marker> tire.</example>
             </rule>
 
             <rule>
@@ -521,7 +534,7 @@ USA
 
             <rule>
                 <pattern>
-                    <token regexp="yes">comot|commot</token>
+                    <token regexp="yes">comot|commot|kommot|kormot</token>
                 </pattern>
                 <message>Di correct spelling of dis verb na <suggestion>komot</suggestion>.</message>
                 <example correction="komot">She neva <marker>comot</marker> house.</example>
@@ -530,10 +543,26 @@ USA
 
             <rule>
                 <pattern>
-                    <token>chook</token>
+                    <token regexp="yes">chook|shook</token>
                 </pattern>
                 <message>Di correct spelling of dis verb na <suggestion>chuk</suggestion>.</message>
                 <example correction="chuk">No <marker>chook</marker> mouth for my matter.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>taya</token>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>tire</suggestion>.</message>
+                <example correction="tire">We don <marker>taya</marker> for all dis nonsense.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>tink</token>
+                </pattern>
+                <message>Di correct spelling of dis verb na <suggestion>think</suggestion>.</message>
+                <example correction="think">I <marker>tink</marker> sey na joke o.</example>
             </rule>
         </rulegroup>
 
@@ -630,10 +659,26 @@ USA
 
             <rule>
                 <pattern>
-                    <token>dommot</token>
+                    <token regexp="yes">dommot|dormot</token>
                 </pattern>
                 <message>Di correct spelling of dis noun na <suggestion>domot</suggestion>.</message>
                 <example correction="domot">We dey go awa <marker>dommot</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>kain</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>kind</suggestion>.</message>
+                <example correction="kind">Wich <marker>kain</marker> job yu dey find?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">poto-poto|potopoto|kpotokpoto</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>kpoto-kpoto</suggestion>.</message>
+                <example correction="kpoto-kpoto">I no like <marker>poto-poto</marker>.</example>
             </rule>
         </rulegroup>
     </category>
@@ -649,12 +694,23 @@ USA
                <marker>
                    <token regexp="yes">a|an</token>
                </marker>
-                <token postag="NN" />
+               <token postag_regexp="yes" postag="NN|JJ" />
             </pattern>
             <message>Naija no get indefinite article.</message>
             <example correction="">I wan buy <marker>a</marker> book.</example>
             <example correction="">I don chop <marker>an</marker> apple.</example>
             <example type="correct">I dey chop beans on a regular.</example>
+        </rule>
+
+        <rule id="SUBJUNCTIVE_MARKER_MISSPELLING" name="Check sey spelling of subjunctive marker dey correct">
+            <pattern>
+                <marker>
+                    <token regexp="yes">make|meik</token>
+                </marker>
+                <token postag_regexp="yes" postag="PRP" />
+            </pattern>
+            <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
+            <example correction="mek">E dey important sey <marker>make</marker> yu sabi wetin contract talk before yu sign am.</example>
         </rule>
     </category>
 </rules>
