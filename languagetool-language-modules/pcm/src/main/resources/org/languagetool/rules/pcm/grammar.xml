@@ -25,20 +25,6 @@ USA
 <!DOCTYPE rules []>
 
 <rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="pcm" xsi:noNamespaceSchemaLocation="../../../../../../../../../languagetool-core/src/main/resources/org/languagetool/rules/rules.xsd">
-    <category id="COMMONLY_CONFUSED_WORDS" name="Words wey dey confuse people">
-        <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; dey correct">
-            <pattern>
-                <token postag_regexp="yes" postag="VB|JJ" />
-                <marker>
-                    <token regexp="yes">say|sei|se</token>
-                </marker>
-            </pattern>
-            <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> sey".</message>
-            <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
-            <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
-        </rule>
-    </category>
-
     <category id="SPELLING_ERRORS" name="Spelling Errors">
         <rulegroup id="DETERMINERS_MISSPELLING" name="Check sey spelling of determiners dey correct">
             <rule>
@@ -451,6 +437,18 @@ USA
         </rulegroup>
 
         <rulegroup id="CONJUNCTIONS_MISSPELLING" name="Check sey spelling of conjunctions dey correct">
+            <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; dey correct">
+                <pattern>
+                    <token postag_regexp="yes" postag="VB|JJ" />
+                    <marker>
+                        <token regexp="yes">say|sei|se</token>
+                    </marker>
+                </pattern>
+                <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> sey".</message>
+                <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
+                <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
+            </rule>
+
             <rule>
                 <pattern>
                     <token>whether</token>
@@ -680,6 +678,14 @@ USA
                 <message>Di correct spelling of dis noun na <suggestion>kpoto-kpoto</suggestion>.</message>
                 <example correction="kpoto-kpoto">I no like <marker>poto-poto</marker>.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>moto</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>motor</suggestion>.</message>
+                <example correction="motor">I neva buy new <marker>moto</marker>.</example>
+            </rule>
         </rulegroup>
     </category>
 
@@ -702,9 +708,9 @@ USA
             <example type="correct">I dey chop beans on a regular.</example>
         </rule>
 
-        <rule id="SUBJUNCTIVE_MARKER_MISSPELLING" name="Check sey spelling of subjunctive marker dey correct">
+        <rule id="MEK_SUBORDINATING_CONJUNCTION_AND_SUBJUNCTIVE_MARKER" name="Check sey spelling of subordinating conjunction &quot;mek&quot;/subjunctive marker dey correct">
             <antipattern>
-                <token postag_regexp="yes" postag="VB"/>
+                <token regexp="yes">go</token>
                 <token>make</token>
                 <token postag_regexp="yes" postag="PRP|NN|NNS"/>
             </antipattern>
@@ -715,11 +721,53 @@ USA
                 </marker>
                 <token postag_regexp="yes" postag="PRP|NN|NNS"/>
             </pattern>
+
             <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
+
             <example correction="mek">E dey important sey <marker>make</marker> yu sabi wetin contract talk before yu sign am.</example>
             <example correction="Mek"><marker>Make</marker> persin no touch my food o.</example>
             <example type="correct">Dem want mek una komot.</example>
+            <example type="correct">Dem want make una komot.</example>
             <example type="correct">Yu go make persin cry</example>
+            <example correction="mek">Yu gó <marker>make</marker> we no for see yu.</example>
+            <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
         </rule>
+    </category>
+
+    <category id="TONES" name="Tones">
+        <rulegroup id="MARKED_LOW_TONE" name="Check sey tone words no dey use grave accent">
+            <rule>
+                <pattern>
+                    <token>dèy</token>
+                </pattern>
+                <message>Low tone suppose déy unmarked. Mek yu use <suggestion>dey</suggestion>.</message>
+                <example correction="dey">I <marker>dèy</marker> find money.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="UNMARKED_HIGH_TONE" name="Check sey tone words dey use acute accent">
+            <rule>
+                <pattern>
+                    <token>to</token>
+                    <marker>
+                        <token>go</token>
+                    </marker>
+                </pattern>
+                <message>High tone suppose déy marked. Mek yu use <suggestion>gó</suggestion>.</message>
+                <example correction="gó">She decide to <marker>go</marker> see doctor.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token regexp="yes">dey|dèy</token>
+                    </marker>
+                    <token postag_regexp="yes" postag="JJ|JJR"/>
+                </pattern>
+
+                <message>High tone suppose déy marked. Mek yu use <suggestion>déy</suggestion>.</message>
+                <example correction="déy">My pikin <marker>dey</marker> sad today.</example>
+            </rule>
+        </rulegroup>
     </category>
 </rules>
