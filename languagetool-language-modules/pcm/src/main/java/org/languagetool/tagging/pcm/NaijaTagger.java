@@ -60,7 +60,8 @@ public class NaijaTagger extends BaseTagger {
     "nyash",
     "domot",
     "sakpa",
-    "persin"
+    "persin",
+    "pikin"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(

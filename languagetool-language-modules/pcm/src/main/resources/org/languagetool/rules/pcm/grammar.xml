@@ -732,6 +732,20 @@ USA
             <example correction="mek">Yu gó <marker>make</marker> we no for see yu.</example>
             <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
         </rule>
+        
+        <rulegroup id="TENSES" name="Check sey text no dey use English language tenses">
+            <rule>
+                <pattern>
+                    <token postag_regexp="yes" postag="VBZ"/>
+                </pattern>
+
+                <message>No use English third-persin singular present for Naija Pidgin.</message>
+                <example type="incorrect">She <marker>chops</marker> cake.</example>
+                <example type="correct">She dey chop cake.</example>
+                <example type="incorrect">My brother <marker>runs</marker> everyday.</example>
+                <example type="correct">My brother dey run everyday.</example>
+            </rule>
+        </rulegroup>
     </category>
 
     <category id="TONES" name="Tones">
@@ -740,8 +754,16 @@ USA
                 <pattern>
                     <token>dèy</token>
                 </pattern>
-                <message>Low tone suppose déy unmarked. Mek yu use <suggestion>dey</suggestion>.</message>
+                <message>No mark low tone with grave accent. Mek yu use <suggestion>dey</suggestion>.</message>
                 <example correction="dey">I <marker>dèy</marker> find money.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>gò</token>
+                </pattern>
+                <message>No mark low tone with grave accent. Mek yu use <suggestion>go</suggestion>.</message>
+                <example correction="go">I <marker>gò</marker> soon reach house.</example>
             </rule>
         </rulegroup>
 
@@ -753,20 +775,42 @@ USA
                         <token>go</token>
                     </marker>
                 </pattern>
-                <message>High tone suppose déy marked. Mek yu use <suggestion>gó</suggestion>.</message>
+                <message>Dey mark high tone with acute accent. Mek yu use <suggestion>gó</suggestion>.</message>
                 <example correction="gó">She decide to <marker>go</marker> see doctor.</example>
             </rule>
 
             <rule>
                 <pattern>
                     <marker>
-                        <token regexp="yes">dey|dèy</token>
+                        <token>go</token>
                     </marker>
-                    <token postag_regexp="yes" postag="JJ|JJR"/>
+                    <token postag_regexp="yes" postag="NN.*">
+                        <exception postag="VB" postag_regexp="yes"/>
+                    </token>
                 </pattern>
 
-                <message>High tone suppose déy marked. Mek yu use <suggestion>déy</suggestion>.</message>
+                <message>Dey mark high tone with acute accent. Mek yu use <suggestion>gó</suggestion>.</message>
+
+                <example correction="gó">My pikin don <marker>go</marker> Paris.</example>
+                <example correction="gó">Abeg, no <marker>go</marker> China o.</example>
+                <example type="correct">I go market di product later.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token>dey</token>
+                    </marker>
+                    <token postag="JJ|JJR|NN.*" postag_regexp="yes">
+                        <exception postag="VB" postag_regexp="yes"/>
+                    </token>
+                </pattern>
+
+                <message>Dey mark high tone with acute accent. Mek yu use <suggestion>déy</suggestion>.</message>
+
                 <example correction="déy">My pikin <marker>dey</marker> sad today.</example>
+                <example correction="déy">Una no <marker>dey</marker> London?</example>
+                <example type="correct">I dey book hotel for two of una.</example>
             </rule>
         </rulegroup>
     </category>
