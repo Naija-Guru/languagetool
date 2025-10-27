@@ -732,39 +732,6 @@ USA
             <example correction="mek">Yu gó <marker>make</marker> we no for see yu.</example>
             <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
         </rule>
-        
-        <rulegroup id="TENSES" name="Check sey text no dey use English language tenses">
-            <rule>
-                <pattern>
-                    <or>
-                        <token postag_regexp="yes" postag="NN|NNP"/>
-                        <token regexp="yes">he|she|e</token>
-                    </or>
-                    <marker>
-                        <token postag_regexp="yes" postag="VBZ"/>
-                    </marker>
-                </pattern>
-
-                <message>No use English third-persin singular present for Naija Pidgin.</message>
-
-                <example type="incorrect">She <marker>chops</marker> cake.</example>
-                <example type="correct">She dey chop cake.</example>
-                <example type="incorrect">My brother <marker>runs</marker> everyday.</example>
-                <example type="correct">My brother dey run everyday.</example>
-            </rule>
-        </rulegroup>
-
-        <rule id="PASSIVE_VOICE" name="Check weda text dey try use passive voice for Naija Pidgin">
-            <pattern>
-                <token>dey</token>
-                <token postag="VBN"/>
-            </pattern>
-
-            <message>Naija Pidgin no get passive voice.</message>
-
-            <example type="incorrect">Car <marker>dey used</marker> for transportation.</example>
-            <example type="correct">Dem dey use car for transportation.</example>
-        </rule>
     </category>
 
     <category id="TONES" name="Tones">
