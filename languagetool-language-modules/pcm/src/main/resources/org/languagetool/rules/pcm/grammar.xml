@@ -692,30 +692,59 @@ USA
             <example type="correct">I dey chop beans on a regular.</example>
         </rule>
 
-        <rule id="MEK_SUBORDINATING_CONJUNCTION_AND_SUBJUNCTIVE_MARKER" name="Check sey spelling of subordinating conjunction &quot;mek&quot;/subjunctive marker déy correct">
-            <antipattern>
-                <token regexp="yes">go</token>
-                <token>make</token>
-                <token postag_regexp="yes" postag="PRP|NN|NNS"/>
-            </antipattern>
+        <rulegroup id="MEK_SUBORDINATING_CONJUNCTION_AND_SUBJUNCTIVE_MARKER" name="Check sey spelling of subordinating conjunction &quot;mek&quot;/subjunctive marker déy correct">
+            <rule>
+                <antipattern>
+                    <token>make</token>
+                    <token regexp="yes">am</token>
+                </antipattern>
 
-            <pattern>
-                <marker>
-                    <token regexp="yes">make|meik</token>
-                </marker>
-                <token postag_regexp="yes" postag="PRP|NN|NNS"/>
-            </pattern>
+                <pattern>
+                    <token postag="SENT_START"/>
+                    <marker>
+                        <token regexp="yes">make|meik</token>
+                    </marker>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                </pattern>
 
-            <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
+                <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
 
-            <example correction="mek">E dey important sey <marker>make</marker> yu sabi wetin contract talk before yu sign am.</example>
-            <example correction="Mek"><marker>Make</marker> persin no touch my food o.</example>
-            <example type="correct">Dem want mek una komot.</example>
-            <example type="correct">Dem want make una komot.</example>
-            <example type="correct">Yu go make persin cry</example>
-            <example correction="mek">Yu gó <marker>make</marker> we no for see yu.</example>
-            <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
-        </rule>
+                <example correction="Mek"><marker>Make</marker> person no touch my food o.</example>
+                <example type="correct">Make am for me abeg.</example>
+            </rule>
+
+            <rule>
+                <antipattern>
+                    <token regexp="yes">go|want</token>
+                    <token>make</token>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                </antipattern>
+
+                <antipattern>
+                    <token>na</token>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                    <token>make</token>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                </antipattern>
+
+                <pattern>
+                    <marker>
+                        <token regexp="yes">make|meik</token>
+                    </marker>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                </pattern>
+
+                <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
+
+                <example correction="mek">E dey important sey <marker>make</marker> yu sabi wetin contract talk before yu sign am.</example>
+                <example type="correct">Dem want mek una komot.</example>
+                <example type="correct">Dem want make una komot.</example>
+                <example type="correct">Yu go make person cry.</example>
+                <example correction="mek">Yu gó <marker>make</marker> we no for see yu.</example>
+                <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
+                <example type="correct">Na condition make crayfish bend.</example>
+            </rule>
+        </rulegroup>
     </category>
 
     <category id="TONES" name="Tones">

@@ -40,7 +40,9 @@ public class NaijaTagger extends BaseTagger {
   private static final String VERB_BASE_FORM_TAG = "VB";
   private static final String NOUN_SINGULAR_COUNT_TAG = "NN";
   private static final String ADJECTIVE_TAG = "JJ";
+  private static final String DETERMINER_TAG = "DT";
   private static final String PRONOUN_PERSONAL_TAG = "PRP";
+  private static final String PREPOSITION_OR_SUBORDINATE_CONJUNCTION_TAG = "IN";
 
   private static final Set<String> VERBS = ImmutableSet.of(
     "baff",
@@ -60,7 +62,6 @@ public class NaijaTagger extends BaseTagger {
     "nyash",
     "domot",
     "sakpa",
-    "persin",
     "pikin"
   );
 
@@ -71,10 +72,21 @@ public class NaijaTagger extends BaseTagger {
     "brekete"
   );
 
+  private static final Set<String> DETERMINERS = ImmutableSet.of(
+    "im"
+  );
+
   private static final Set<String> PRONOUNS = ImmutableSet.of(
     "e",
-    "mysef",
-    "yu"
+    "yu",
+    "una",
+    "wetin",
+    "am",
+    "im"
+  );
+
+  private static final Set<String> PREPOSITION_OR_SUBORDINATE_CONJUNCTION = ImmutableSet.of(
+    "sey"
   );
 
   public static final NaijaTagger INSTANCE = new NaijaTagger();
@@ -148,8 +160,14 @@ public class NaijaTagger extends BaseTagger {
       if (ADJECTIVES.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, ADJECTIVE_TAG, lowerWord));
       }
+      if (DETERMINERS.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, DETERMINER_TAG, lowerWord));
+      }
       if (PRONOUNS.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, PRONOUN_PERSONAL_TAG, lowerWord));
+      }
+      if (PREPOSITION_OR_SUBORDINATE_CONJUNCTION.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, PREPOSITION_OR_SUBORDINATE_CONJUNCTION_TAG, lowerWord));
       }
 
       if (l.isEmpty()) {
