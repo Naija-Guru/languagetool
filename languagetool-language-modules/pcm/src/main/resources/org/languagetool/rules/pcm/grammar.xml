@@ -487,16 +487,23 @@ USA
             </rule>
 
             <rule>
+                <antipattern>
+                    <token regexp="yes">na|be</token>
+                    <token>thief</token>
+                </antipattern>
+
                 <pattern>
-                    <token postag_regexp="yes" postag="NN|NNS|NNP|NNPS|VB|PRP" />
+                    <token postag_regexp="yes" postag="NN.*|VB|PRP" />
                     <marker>
                         <token regexp="yes">tiff|tiif|thief</token>
                     </marker>
                 </pattern>
+
                 <message>Di correct spelling of dis verb na <suggestion>thieve</suggestion>.</message>
                 <example correction="thieve">Dem don <marker>tiff</marker> dat my fine watch o.</example>
                 <example correction="thieve">Politicians <marker>tiif</marker> di whole budget.</example>
                 <example correction="thieve">Wetin she <marker>thief</marker>?</example>
+                <example type="correct">Na hu dem catch be thief.</example>
             </rule>
 
             <rule>
@@ -727,6 +734,11 @@ USA
                     <token postag_regexp="yes" postag="PRP|NN.*"/>
                 </antipattern>
 
+                <antipattern>
+                    <token>to</token>
+                    <token>make</token>
+                </antipattern>
+
                 <pattern>
                     <marker>
                         <token regexp="yes">make|meik</token>
@@ -743,6 +755,7 @@ USA
                 <example correction="mek">Yu gó <marker>make</marker> we no for see yu.</example>
                 <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
                 <example type="correct">Na condition make crayfish bend.</example>
+                <example type="correct">Di intent fit be to make request.</example>
             </rule>
         </rulegroup>
     </category>
@@ -810,6 +823,7 @@ USA
                 <example correction="déy">My pikin <marker>dey</marker> sad today.</example>
                 <example correction="déy">Una no <marker>dey</marker> London?</example>
                 <example type="correct">I dey book hotel for two of una.</example>
+                <example type="correct">Monkey no dey born goat</example>
             </rule>
         </rulegroup>
     </category>
