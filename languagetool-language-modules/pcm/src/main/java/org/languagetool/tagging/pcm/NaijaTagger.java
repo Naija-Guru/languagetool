@@ -52,8 +52,10 @@ public class NaijaTagger extends BaseTagger {
     "komot",
     "chuk",
     "dey",
+    "déy",
     "na",
-    "born"
+    "born",
+    "para"
   );
 
   private static final Set<String> NOUNS = ImmutableSet.of(

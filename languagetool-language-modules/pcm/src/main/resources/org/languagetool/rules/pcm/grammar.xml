@@ -677,6 +677,27 @@ USA
                 <message>Di correct spelling of dis noun na <suggestion>motor</suggestion>.</message>
                 <example correction="motor">I neva buy new <marker>moto</marker>.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>Nigerian</token>
+                    <token>Pidgin</token>
+                </pattern>
+
+                <message>Nigerian Pidgin na <suggestion>Naija Pidgin</suggestion> for Naija Pidgin.</message>
+                <example correction="Naija Pidgin"><marker>Nigerian Pidgin</marker> grammar déy interesting.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>Nigerian</token>
+                    <token>Pidgin</token>
+                    <token>English</token>
+                </pattern>
+
+                <message><suggestion>Naija Pidgin</suggestion> no be English.</message>
+                <example correction="Naija Pidgin">Yu sabi speak <marker>Nigerian Pidgin English</marker>?</example>
+            </rule>
         </rulegroup>
     </category>
 
@@ -702,27 +723,7 @@ USA
         <rulegroup id="MEK_SUBORDINATING_CONJUNCTION_AND_SUBJUNCTIVE_MARKER" name="Check sey spelling of subordinating conjunction &quot;mek&quot;/subjunctive marker déy correct">
             <rule>
                 <antipattern>
-                    <token>make</token>
-                    <token regexp="yes">am</token>
-                </antipattern>
-
-                <pattern>
-                    <token postag="SENT_START"/>
-                    <marker>
-                        <token regexp="yes">make|meik</token>
-                    </marker>
-                    <token postag_regexp="yes" postag="PRP|NN.*"/>
-                </pattern>
-
-                <message>Di correct spelling of di subjunctive marker na <suggestion>mek</suggestion></message>
-
-                <example correction="Mek"><marker>Make</marker> person no touch my food o.</example>
-                <example type="correct">Make am for me abeg.</example>
-            </rule>
-
-            <rule>
-                <antipattern>
-                    <token regexp="yes">go|want</token>
+                    <token regexp="yes">go|want|try</token>
                     <token>make</token>
                     <token postag_regexp="yes" postag="PRP|NN.*"/>
                 </antipattern>
@@ -735,8 +736,13 @@ USA
                 </antipattern>
 
                 <antipattern>
-                    <token>to</token>
+                    <token regexp="yes">to|dey</token>
                     <token>make</token>
+                </antipattern>
+
+                <antipattern>
+                    <token>make</token>
+                    <token regexp="yes">am</token>
                 </antipattern>
 
                 <pattern>
@@ -756,6 +762,11 @@ USA
                 <example correction="mek">E put on radio <marker>make</marker> e hear news.</example>
                 <example type="correct">Na condition make crayfish bend.</example>
                 <example type="correct">Di intent fit be to make request.</example>
+                <example type="correct">Na im bier-bier make am look mature.</example>
+                <example correction="Mek"><marker>Make</marker> person no touch my food o.</example>
+                <example type="correct">Make am for me abeg.</example>
+                <example type="correct">I dey try make pasta.</example>
+                <example type="correct">He dey make breakfast.</example>
             </rule>
         </rulegroup>
     </category>
@@ -814,7 +825,7 @@ USA
                         <token>dey</token>
                     </marker>
                     <token postag="JJ|JJR|NN.*" postag_regexp="yes">
-                        <exception postag="VB" postag_regexp="yes"/>
+                        <exception postag="VB|RB" postag_regexp="yes"/>
                     </token>
                 </pattern>
 
@@ -824,6 +835,7 @@ USA
                 <example correction="déy">Una no <marker>dey</marker> London?</example>
                 <example type="correct">I dey book hotel for two of una.</example>
                 <example type="correct">Monkey no dey born goat</example>
+                <example type="correct">Awa plan no dey ever work.</example>
             </rule>
         </rulegroup>
     </category>
