@@ -677,7 +677,9 @@ USA
                 <message>Di correct spelling of dis noun na <suggestion>motor</suggestion>.</message>
                 <example correction="motor">I neva buy new <marker>moto</marker>.</example>
             </rule>
+        </rulegroup>
 
+        <rulegroup id="NAIJA_PIDGIN_MISSPELLING" name="Check sey spelling of &quot;Naija Pidgin&quot; déy correct">
             <rule>
                 <pattern>
                     <token>Nigerian</token>
@@ -697,6 +699,18 @@ USA
 
                 <message><suggestion>Naija Pidgin</suggestion> no be English.</message>
                 <example correction="Naija Pidgin">Yu sabi speak <marker>Nigerian Pidgin English</marker>?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token>Naija</token>
+                    </marker>
+                    <token regexp="yes">word|phrase|idiom</token>
+                </pattern>
+
+                <message>Use <suggestion>Naija Pidgin</suggestion>.</message>
+                <example correction="Naija Pidgin">Na di definition of di <marker>Naija</marker> word "wahala".</example>
             </rule>
         </rulegroup>
     </category>
@@ -736,7 +750,7 @@ USA
                 </antipattern>
 
                 <antipattern>
-                    <token regexp="yes">to|dey</token>
+                    <token regexp="yes">to|dey|fit</token>
                     <token>make</token>
                 </antipattern>
 
@@ -767,6 +781,7 @@ USA
                 <example type="correct">Make am for me abeg.</example>
                 <example type="correct">I dey try make pasta.</example>
                 <example type="correct">He dey make breakfast.</example>
+                <example type="correct">I fit make chow for una.</example>
             </rule>
         </rulegroup>
     </category>
