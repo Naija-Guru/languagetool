@@ -431,6 +431,11 @@ USA
 
         <rulegroup id="CONJUNCTIONS_MISSPELLING" name="Check sey spelling of conjunctions déy correct">
             <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; déy correct">
+                <antipattern>
+                    <token regexp="yes">use</token>
+                    <token regexp="yes">say|sei|se</token>
+                </antipattern>
+
                 <pattern>
                     <token postag_regexp="yes" postag="VB|JJ" />
                     <marker>
@@ -440,6 +445,7 @@ USA
                 <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> sey".</message>
                 <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
                 <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
+                <example type="correct">Wetin dem dey use say sorry or take heart.</example>
             </rule>
 
             <rule>
@@ -562,6 +568,27 @@ USA
                 <message>Di correct spelling of dis verb na <suggestion>think</suggestion>.</message>
                 <example correction="think">I <marker>tink</marker> sey na joke o.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                    <token min="0" regexp="yes">dey|don|bin</token>
+                    <marker>
+                        <token regexp="yes">waka</token>
+                    </marker>
+                </pattern>
+
+                <message>Di correct spelling of dis verb na <suggestion>waká</suggestion>.</message>
+                <example correction="waká">As I dey <marker>waka</marker> go exam hall, I see Femi for road.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>bath</token>
+                </pattern>
+                <message>Di correct spelling of dis word na <suggestion>baff</suggestion>.</message>
+                <example correction="baff">I go <marker>bath</marker> with hot water.</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="NOUNS_MISSPELLING" name="Check sey spelling of adjectives déy correct">
@@ -682,11 +709,11 @@ USA
         <rulegroup id="NAIJA_PIDGIN_MISSPELLING" name="Check sey spelling of &quot;Naija Pidgin&quot; déy correct">
             <rule>
                 <pattern>
-                    <token>Nigerian</token>
+                    <token regexp="yes">Nigerian|Nigeria</token>
                     <token>Pidgin</token>
                 </pattern>
 
-                <message>Nigerian Pidgin na <suggestion>Naija Pidgin</suggestion> for Naija Pidgin.</message>
+                <message>\1 \2 na <suggestion>Naija Pidgin</suggestion> for Naija Pidgin.</message>
                 <example correction="Naija Pidgin"><marker>Nigerian Pidgin</marker> grammar déy interesting.</example>
             </rule>
 
@@ -750,13 +777,19 @@ USA
                 </antipattern>
 
                 <antipattern>
+                    <token postag="SENT_START"/>
+                    <token postag_regexp="yes" postag="PRP|NN.*"/>
+                    <token>make</token>
+                </antipattern>
+
+                <antipattern>
                     <token regexp="yes">to|dey|fit</token>
                     <token>make</token>
                 </antipattern>
 
                 <antipattern>
                     <token>make</token>
-                    <token regexp="yes">am</token>
+                    <token regexp="yes">am|mouth|brain|sense</token>
                 </antipattern>
 
                 <pattern>
@@ -782,6 +815,10 @@ USA
                 <example type="correct">I dey try make pasta.</example>
                 <example type="correct">He dey make breakfast.</example>
                 <example type="correct">I fit make chow for una.</example>
+                <example type="correct">Mariam make business decision.</example>
+                <example type="correct">Dat guy too dey make mouth.</example>
+                <example correction="mek">Na to tell person sey <marker>make</marker> dem komot money for dia market wey yu go like buy.</example>
+                <example type="correct">E no make sense.</example>
             </rule>
         </rulegroup>
     </category>
@@ -823,7 +860,7 @@ USA
                         <token>go</token>
                     </marker>
                     <token postag_regexp="yes" postag="NN.*">
-                        <exception postag="VB" postag_regexp="yes"/>
+                        <exception postag="VB|JJ|RB" postag_regexp="yes"/>
                     </token>
                 </pattern>
 
@@ -832,6 +869,7 @@ USA
                 <example correction="gó">My pikin don <marker>go</marker> Paris.</example>
                 <example correction="gó">Abeg, no <marker>go</marker> China o.</example>
                 <example type="correct">I go market di product later.</example>
+                <example type="correct">Papa no go quick come back today.</example>
             </rule>
 
             <rule>
