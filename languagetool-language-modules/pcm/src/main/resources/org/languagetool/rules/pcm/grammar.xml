@@ -432,8 +432,8 @@ USA
         <rulegroup id="CONJUNCTIONS_MISSPELLING" name="Check sey spelling of conjunctions déy correct">
             <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; déy correct">
                 <antipattern>
-                    <token regexp="yes">use</token>
-                    <token regexp="yes">say|sei|se</token>
+                    <token regexp="yes">dey|don|bin|go|use</token>
+                    <token regexp="yes">say</token>
                 </antipattern>
 
                 <pattern>
@@ -446,6 +446,7 @@ USA
                 <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
                 <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
                 <example type="correct">Wetin dem dey use say sorry or take heart.</example>
+                <example type="correct">I dey <marker>say</marker> my last prayer, as una don bring us here mek we die.</example>
             </rule>
 
             <rule>
