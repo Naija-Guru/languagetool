@@ -56,7 +56,8 @@ public class NaijaTagger extends BaseTagger {
     "na",
     "born",
     "para",
-    "waká"
+    "waká",
+    "catwalk"
   );
 
   private static final Set<String> NOUNS = ImmutableSet.of(
@@ -67,7 +68,8 @@ public class NaijaTagger extends BaseTagger {
     "domot",
     "sakpa",
     "pikin",
-    "bier-bier"
+    "bier-bier",
+    "obodoyinbo"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(
@@ -78,7 +80,10 @@ public class NaijaTagger extends BaseTagger {
   );
 
   private static final Set<String> DETERMINERS = ImmutableSet.of(
-    "im"
+    "im",
+    "awa",
+    "di",
+    "yor"
   );
 
   private static final Set<String> PRONOUNS = ImmutableSet.of(

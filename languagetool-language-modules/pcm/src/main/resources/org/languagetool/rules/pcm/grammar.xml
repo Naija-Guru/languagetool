@@ -203,10 +203,11 @@ USA
 
             <rule>
                 <pattern>
-                    <token>them</token>
+                    <token regexp="yes">them|they</token>
                 </pattern>
                 <message>Spelling of English personal pronoun "them" for Naija Pidgin na <suggestion>dem</suggestion>.</message>
                 <example correction="Dem"><marker>Them</marker> no sabi sey things dey hard.</example>
+                <example correction="Dem"><marker>They</marker> do anyhaw.</example>
             </rule>
 
             <rule>
@@ -286,7 +287,7 @@ USA
 
             <rule>
                 <pattern>
-                    <token>sometin</token>
+                    <token regexp="yes">sometin|someting</token>
                 </pattern>
                 <message>Di correct spelling of dis pronoun na <suggestion>something</suggestion>.</message>
                 <example correction="something">I hear <marker>sometin</marker> for backyard.</example>
@@ -437,7 +438,7 @@ USA
                 </antipattern>
 
                 <pattern>
-                    <token postag_regexp="yes" postag="VB|JJ" />
+                    <token postag_regexp="yes" postag="VB|JJ|PRP" />
                     <marker>
                         <token regexp="yes">say|sei|se</token>
                     </marker>
@@ -447,6 +448,7 @@ USA
                 <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
                 <example type="correct">Wetin dem dey use say sorry or take heart.</example>
                 <example type="correct">I dey <marker>say</marker> my last prayer, as una don bring us here mek we die.</example>
+                <example correction="sey">She ask me <marker>say</marker> mek I come dinner.</example>
             </rule>
 
             <rule>
@@ -482,6 +484,24 @@ USA
                 <message>Di correct spelling of dis adjective na <suggestion>plenty</suggestion>.</message>
                 <example correction="plenty">I get <marker>plenti</marker> wahala.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>gan-gan</token>
+                </pattern>
+
+                <message>Di correct spelling of dis adjective na <suggestion>gon-gon</suggestion>.</message>
+                <example correction="gon-gon">Dat place <marker>gan-gan</marker> na wer I grow up.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>tuff</token>
+                </pattern>
+
+                <message>Di correct spelling of dis adjective na <suggestion>tough</suggestion>.</message>
+                <example correction="tough">Na <marker>tuff</marker> person I be.</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="VERBS_MISSPELLING" name="Check sey spelling of verbs déy correct">
@@ -495,7 +515,7 @@ USA
 
             <rule>
                 <antipattern>
-                    <token regexp="yes">na|be</token>
+                    <token regexp="yes">na|be|catch</token>
                     <token>thief</token>
                 </antipattern>
 
@@ -511,6 +531,7 @@ USA
                 <example correction="thieve">Politicians <marker>tiif</marker> di whole budget.</example>
                 <example correction="thieve">Wetin she <marker>thief</marker>?</example>
                 <example type="correct">Na hu dem catch be thief.</example>
+                <example type="correct">Dem catch thief for awa area, beat am well-well.</example>
             </rule>
 
             <rule>
@@ -589,6 +610,15 @@ USA
                 </pattern>
                 <message>Di correct spelling of dis word na <suggestion>baff</suggestion>.</message>
                 <example correction="baff">I go <marker>bath</marker> with hot water.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">gats|gatz</token>
+                </pattern>
+
+                <message>Di correct spelling of dis modal verb na <suggestion>gat</suggestion>.</message>
+                <example correction="gat">We <marker>gats</marker> komot before rain start.</example>
             </rule>
         </rulegroup>
 
@@ -705,6 +735,23 @@ USA
                 <message>Di correct spelling of dis noun na <suggestion>motor</suggestion>.</message>
                 <example correction="motor">I neva buy new <marker>moto</marker>.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>parti</token>
+                </pattern>
+
+                <message>Di correct spelling of dis noun na <suggestion>party</suggestion>.</message>
+                <example correction="party">Make sure yu baff up well for di <marker>parti</marker>.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token>sufferhead</token>
+                </pattern>
+                <message>Di correct spelling of dis noun na <suggestion>suffer-head</suggestion>.</message>
+                <example correction="suffer-head">Wich kind <marker>sufferhead</marker> be dis?</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="NAIJA_PIDGIN_MISSPELLING" name="Check sey spelling of &quot;Naija Pidgin&quot; déy correct">
@@ -716,6 +763,7 @@ USA
 
                 <message>\1 \2 na <suggestion>Naija Pidgin</suggestion> for Naija Pidgin.</message>
                 <example correction="Naija Pidgin"><marker>Nigerian Pidgin</marker> grammar déy interesting.</example>
+                <example correction="Naija Pidgin">Wetin be maggi for <marker>Nigeria Pidgin</marker>?</example>
             </rule>
 
             <rule>
@@ -790,7 +838,7 @@ USA
 
                 <antipattern>
                     <token>make</token>
-                    <token regexp="yes">am|mouth|brain|sense</token>
+                    <token regexp="yes">am|mouth|brain|sense|meaning|mistake|me</token>
                 </antipattern>
 
                 <pattern>
@@ -820,6 +868,11 @@ USA
                 <example type="correct">Dat guy too dey make mouth.</example>
                 <example correction="mek">Na to tell person sey <marker>make</marker> dem komot money for dia market wey yu go like buy.</example>
                 <example type="correct">E no make sense.</example>
+                <example>Shey di classmate gree make Emeka look im textbook?</example>
+                <example correction="mek">God say <marker>make</marker> he add small heat mek awa nyash feel am.</example>
+                <example type="correct">Na dat one make me know sey something don happen.</example>
+                <example type="correct">Dese things dey help people make meaning for dia everyday communication.</example>
+                <example>She dey worry sey dem go sack am if she make mistake.</example>
             </rule>
         </rulegroup>
     </category>
@@ -857,6 +910,20 @@ USA
 
             <rule>
                 <pattern>
+                    <token postag="VB" postag_regexp="yes"/>
+                    <marker>
+                        <token>go</token>
+                    </marker>
+                </pattern>
+
+                <message>Dey mark high tone with acute accent. Mek yu use <suggestion>gó</suggestion>.</message>
+
+                <example correction="gó">Time don reach mek I wake up dey waká <marker>go</marker> market.</example>
+                <example correction="gó">I want <marker>go</marker> special occasion.</example>
+            </rule>
+
+            <rule>
+                <pattern>
                     <marker>
                         <token>go</token>
                     </marker>
@@ -874,12 +941,18 @@ USA
             </rule>
 
             <rule>
+                <antipattern>
+                    <token>dey</token>
+                    <token postag="JJ|RB" postag_regexp="yes"/>
+                    <token postag="VB" postag_regexp="yes"/>
+                </antipattern>
+
                 <pattern>
                     <marker>
                         <token>dey</token>
                     </marker>
-                    <token postag="JJ|JJR|NN.*" postag_regexp="yes">
-                        <exception postag="VB|RB" postag_regexp="yes"/>
+                    <token postag="JJ|JJR|NN.*|DT" postag_regexp="yes">
+                        <exception postag="VB" postag_regexp="yes"/>
                     </token>
                 </pattern>
 
@@ -890,6 +963,24 @@ USA
                 <example type="correct">I dey book hotel for two of una.</example>
                 <example type="correct">Monkey no dey born goat</example>
                 <example type="correct">Awa plan no dey ever work.</example>
+                <example type="correct">And una still dey catwalk on top.</example>
+                <example correction="déy">Oil <marker>dey</marker> yor head</example>
+                <example type="correct">I dey quick sell my market</example>
+                <example correction="déy">Di recruiter talk sey I <marker>dey</marker> very qualified.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token>dey</token>
+                    </marker>
+                    <token postag="SENT_END" postag_regexp="yes"/>
+                </pattern>
+
+                <message>Dey mark high tone with acute accent. Mek yu use <suggestion>déy</suggestion>.</message>
+
+                <example correction="déy">Negative pronoun na pronoun wey dey show sey person or something no <marker>dey</marker>.</example>
+                <example correction="déy">Na only two option <marker>dey</marker>.</example>
             </rule>
         </rulegroup>
     </category>
