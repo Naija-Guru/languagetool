@@ -39,6 +39,7 @@ import java.util.Set;
 public class NaijaTagger extends BaseTagger {
   private static final String VERB_BASE_FORM_TAG = "VB";
   private static final String NOUN_SINGULAR_COUNT_TAG = "NN";
+  private static final String NOUN_PROPER_TAG = "NNP";
   private static final String ADJECTIVE_TAG = "JJ";
   private static final String DETERMINER_TAG = "DT";
   private static final String PRONOUN_PERSONAL_TAG = "PRP";
@@ -57,7 +58,9 @@ public class NaijaTagger extends BaseTagger {
     "born",
     "para",
     "waká",
-    "catwalk"
+    "catwalk",
+    "worse",
+    "gree"
   );
 
   private static final Set<String> NOUNS = ImmutableSet.of(
@@ -70,6 +73,10 @@ public class NaijaTagger extends BaseTagger {
     "pikin",
     "bier-bier",
     "obodoyinbo"
+  );
+
+  private static final Set<String> PROPER_NOUNS = ImmutableSet.of(
+    "emeka"
   );
 
   private static final Set<String> ADJECTIVES = ImmutableSet.of(
@@ -167,6 +174,9 @@ public class NaijaTagger extends BaseTagger {
       }
       if (NOUNS.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, NOUN_SINGULAR_COUNT_TAG, lowerWord));
+      }
+      if (PROPER_NOUNS.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, NOUN_PROPER_TAG, lowerWord));
       }
       if (ADJECTIVES.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, ADJECTIVE_TAG, lowerWord));

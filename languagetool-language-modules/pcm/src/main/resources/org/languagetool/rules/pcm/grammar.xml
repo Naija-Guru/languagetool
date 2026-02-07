@@ -430,27 +430,45 @@ USA
             </rule>
         </rulegroup>
 
-        <rulegroup id="CONJUNCTIONS_MISSPELLING" name="Check sey spelling of conjunctions déy correct">
-            <rule id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; déy correct">
+        <rulegroup id="SEY_SUBORDINATING_CONJUNCTION" name="Check sey spelling of subordinating conjunction &quot;sey&quot; déy correct">
+            <rule>
                 <antipattern>
                     <token regexp="yes">dey|don|bin|go|use</token>
                     <token regexp="yes">say</token>
                 </antipattern>
 
                 <pattern>
-                    <token postag_regexp="yes" postag="VB|JJ|PRP" />
+                    <token postag_regexp="yes" postag="VB|JJ" />
                     <marker>
                         <token regexp="yes">say|sei|se</token>
                     </marker>
                 </pattern>
+
                 <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> sey".</message>
+
                 <example correction="sey">Dem talk <marker>say</marker> wahala dey.</example>
                 <example correction="sey">Yu lucky <marker>sei</marker> I no bring my book.</example>
                 <example type="correct">Wetin dem dey use say sorry or take heart.</example>
-                <example type="correct">I dey <marker>say</marker> my last prayer, as una don bring us here mek we die.</example>
-                <example correction="sey">She ask me <marker>say</marker> mek I come dinner.</example>
+                <example type="correct">I dey say my last prayer, as una don bring us here mek we die.</example>
+                <example type="correct">I say free am.</example>
             </rule>
 
+            <rule>
+                <pattern>
+                    <token postag_regexp="yes" postag="VB" />
+                    <token postag_regexp="yes" postag="PRP" />
+                    <marker>
+                        <token regexp="yes">say|sei|se</token>
+                    </marker>
+                </pattern>
+
+                <message>Spelling of di subordinating conjunction <suggestion>sey</suggestion> no correct. E suppose be "<match no="1" /> <match no="2" /> sey".</message>
+
+                <example correction="sey">She ask me <marker>say</marker> mek I come dinner.</example>
+            </rule>
+        </rulegroup>
+
+        <rulegroup id="CONJUNCTIONS_MISSPELLING" name="Check sey spelling of conjunctions déy correct">
             <rule>
                 <pattern>
                     <token>whether</token>
@@ -813,7 +831,7 @@ USA
         <rulegroup id="MEK_SUBORDINATING_CONJUNCTION_AND_SUBJUNCTIVE_MARKER" name="Check sey spelling of subordinating conjunction &quot;mek&quot;/subjunctive marker déy correct">
             <rule>
                 <antipattern>
-                    <token regexp="yes">go|want|try</token>
+                    <token regexp="yes">go|want|try|use</token>
                     <token>make</token>
                     <token postag_regexp="yes" postag="PRP|NN.*"/>
                 </antipattern>
@@ -868,11 +886,12 @@ USA
                 <example type="correct">Dat guy too dey make mouth.</example>
                 <example correction="mek">Na to tell person sey <marker>make</marker> dem komot money for dia market wey yu go like buy.</example>
                 <example type="correct">E no make sense.</example>
-                <example>Shey di classmate gree make Emeka look im textbook?</example>
+                <example correction="mek">Shey di classmate gree <marker>make</marker> Emeka look im textbook?</example>
                 <example correction="mek">God say <marker>make</marker> he add small heat mek awa nyash feel am.</example>
                 <example type="correct">Na dat one make me know sey something don happen.</example>
                 <example type="correct">Dese things dey help people make meaning for dia everyday communication.</example>
-                <example>She dey worry sey dem go sack am if she make mistake.</example>
+                <example type="correct">She dey worry sey dem go sack am if she make mistake.</example>
+                <example type="correct">Flour wey dem make from cassava, dey use make staple foods like eba.</example>
             </rule>
         </rulegroup>
     </category>
@@ -909,6 +928,11 @@ USA
             </rule>
 
             <rule>
+                <antipattern>
+                    <token>go</token>
+                    <token regexp="yes">don</token>
+                </antipattern>
+
                 <pattern>
                     <token postag="VB" postag_regexp="yes"/>
                     <marker>
@@ -920,6 +944,7 @@ USA
 
                 <example correction="gó">Time don reach mek I wake up dey waká <marker>go</marker> market.</example>
                 <example correction="gó">I want <marker>go</marker> special occasion.</example>
+                <example type="correct">Baba Solo go don shape am for me on Saturday.</example>
             </rule>
 
             <rule>
@@ -938,6 +963,7 @@ USA
                 <example correction="gó">Abeg, no <marker>go</marker> China o.</example>
                 <example type="correct">I go market di product later.</example>
                 <example type="correct">Papa no go quick come back today.</example>
+                <example type="correct">E go worse pass if dem no see body.</example>
             </rule>
 
             <rule>
