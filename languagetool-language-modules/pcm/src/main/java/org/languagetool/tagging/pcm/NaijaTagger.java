@@ -38,6 +38,7 @@ import java.util.Set;
  */
 public class NaijaTagger extends BaseTagger {
   private static final String VERB_BASE_FORM_TAG = "VB";
+  private static final String VERB_MODAL_TAG = "MD";
   private static final String NOUN_SINGULAR_COUNT_TAG = "NN";
   private static final String NOUN_PROPER_TAG = "NNP";
   private static final String ADJECTIVE_TAG = "JJ";
@@ -61,6 +62,17 @@ public class NaijaTagger extends BaseTagger {
     "catwalk",
     "worse",
     "gree"
+  );
+
+  private static final Set<String> MODAL_VERBS = ImmutableSet.of(
+    "fit",
+    "must",
+    "gat",
+    "need",
+    "suppose",
+    "mek",
+    "go",
+    "for"
   );
 
   private static final Set<String> NOUNS = ImmutableSet.of(
@@ -171,6 +183,9 @@ public class NaijaTagger extends BaseTagger {
       // Tag Naija words not in English, or with different spellings.
       if (VERBS.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, VERB_BASE_FORM_TAG, lowerWord));
+      }
+      if (MODAL_VERBS.contains(lowerWord)) {
+        l.add(new AnalyzedToken(word, VERB_MODAL_TAG, lowerWord));
       }
       if (NOUNS.contains(lowerWord)) {
         l.add(new AnalyzedToken(word, NOUN_SINGULAR_COUNT_TAG, lowerWord));
