@@ -929,11 +929,15 @@ USA
             </rule>
 
             <rule>
+                <antipattern>
+                    <token>go</token>
+                    <token regexp="yes">don</token>
+                </antipattern>
+
                 <pattern>
-                    <or>
-                        <token postag="MD" postag_regexp="yes"/>
-                        <token regexp="yes">want|waká</token>
-                    </or>
+                    <token postag_regexp="yes" postag="VB">
+                        <exception regexp="yes">article</exception>
+                    </token>
                     <marker>
                         <token>go</token>
                     </marker>
@@ -945,6 +949,7 @@ USA
                 <example correction="gó">I want <marker>go</marker> special occasion.</example>
                 <example type="correct">Baba Solo go don shape am for me on Saturday.</example>
                 <example type="correct">Dis article go explore di different-different types of reduplication wey dey Naija Pidgin.</example>
+                <example correction="gó">My head shift <marker>go</marker> anoda place.</example>
             </rule>
 
             <rule>
@@ -964,6 +969,19 @@ USA
                 <example type="correct">I go market di product later.</example>
                 <example type="correct">Papa no go quick come back today.</example>
                 <example type="correct">E go worse pass if dem no see body.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token>go</token>
+                    </marker>
+                    <token postag="SENT_END" postag_regexp="yes"/>
+                </pattern>
+
+                <message>Dey mark high tone with acute accent. Mek yu use <suggestion>gó</suggestion>.</message>
+
+                <example correction="gó">If I talk am, na church dem go carry me <marker>go</marker>.</example>
             </rule>
 
             <rule>
