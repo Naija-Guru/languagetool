@@ -150,6 +150,22 @@ USA
                 <message>Spelling of English interrogative pronoun "who" for Naija Pidgin na <suggestion>hu</suggestion>.</message>
                 <example correction="Hu"><marker>Who</marker> be dat?</example>
             </rule>
+
+            <rule>
+                <antipattern>
+                    <token>what</token>
+                    <token regexp="yes">of|about</token>
+                </antipattern>
+
+                <pattern>
+                    <token>what</token>
+                </pattern>
+
+                <message>Di correct spelling of dis word na <suggestion>wetin</suggestion>.</message>
+
+                <example correction="Wetin"><marker>What</marker> be dat?</example>
+                <example type="correct">What of Ade? Wer e déy?</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="PERSONAL_PRONOUNS_MISSPELLING" name="Check sey spelling of personal pronouns déy correct">
@@ -167,6 +183,14 @@ USA
                 </pattern>
                 <message>Spelling of English personal pronoun "you" for Naija Pidgin na <suggestion>yu</suggestion>.</message>
                 <example correction="yu">Haw <marker>you</marker> déy?</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <token regexp="yes">mysef</token>
+                </pattern>
+                <message>Di correct spelling of dis personal pronoun na <suggestion>myself</suggestion>.</message>
+                <example correction="myself">Mek I tell yu small about <marker>mysef</marker>.</example>
             </rule>
 
             <rule>
@@ -492,6 +516,14 @@ USA
                 <message>Di correct spelling of dis word na <suggestion>before</suggestion>.</message>
                 <example correction="before">Mek I no chuk mouth <marker>bifor</marker> I go collect slap.</example>
             </rule>
+
+            <rule>
+                <pattern>
+                    <token>dou</token>
+                </pattern>
+                <message>Di correct spelling of dis word na <suggestion>though</suggestion>.</message>
+                <example correction="though">Even <marker>dou</marker> e get small time for imself, most of di time e go dey study.</example>
+            </rule>
         </rulegroup>
 
         <rulegroup id="ADJECTIVES_MISSPELLING" name="Check sey spelling of adjectives déy correct">
@@ -637,6 +669,18 @@ USA
 
                 <message>Di correct spelling of dis modal verb na <suggestion>gat</suggestion>.</message>
                 <example correction="gat">We <marker>gats</marker> komot before rain start.</example>
+            </rule>
+
+            <rule>
+                <pattern>
+                    <marker>
+                        <token regexp="yes">been</token>
+                    </marker>
+                    <token postag_regexp="yes" postag="VB"/>
+                </pattern>
+
+                <message>Di correct spelling of dis word na <suggestion>bin</suggestion>.</message>
+                <example correction="bin">Ade <marker>been</marker> want gó di concert.</example>
             </rule>
         </rulegroup>
 
@@ -919,7 +963,7 @@ USA
         <rulegroup id="UNMARKED_HIGH_TONE" name="Check sey tone words dey use acute accent">
             <rule>
                 <pattern>
-                    <token>to</token>
+                    <token regexp="yes">to|dey|don|bin</token>
                     <marker>
                         <token>go</token>
                     </marker>
