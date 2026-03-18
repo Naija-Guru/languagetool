@@ -263,7 +263,7 @@ USA
 
             <rule>
                 <pattern>
-                    <token>anytin</token>
+                    <token regexp="yes">anytin|anyting</token>
                 </pattern>
                 <message>Di correct spelling of dis pronoun na <suggestion>anything</suggestion>.</message>
                 <example correction="anything">I no sabi <marker>anytin</marker> about am.</example>
@@ -975,12 +975,12 @@ USA
             <rule>
                 <antipattern>
                     <token>go</token>
-                    <token regexp="yes">don</token>
+                    <token regexp="yes">don|dey|déy</token>
                 </antipattern>
 
                 <pattern>
                     <token postag_regexp="yes" postag="VB">
-                        <exception regexp="yes">article</exception>
+                        <exception regexp="yes">article|eye</exception>
                     </token>
                     <marker>
                         <token>go</token>
@@ -994,6 +994,7 @@ USA
                 <example type="correct">Baba Solo go don shape am for me on Saturday.</example>
                 <example type="correct">Dis article go explore di different-different types of reduplication wey dey Naija Pidgin.</example>
                 <example correction="gó">My head shift <marker>go</marker> anoda place.</example>
+                <example type="correct">Wetin yor eye dey find na im yor eye go see.</example>
             </rule>
 
             <rule>
